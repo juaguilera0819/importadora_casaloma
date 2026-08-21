@@ -1,0 +1,47 @@
+/* src/app.css */
+:root, body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* Fondo blanco por defecto para toda la app */
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.main {
+  width: 100%;
+}
+
+.footer {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  color: #333333;
+  text-align: center;
+}
+:root, body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  overflow-x: hidden; /* Evita scroll horizontal en móviles */
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.main {
+  width: 100%;
+  overflow-x: hidden;
+}
+ 
+body, .app, .main {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}

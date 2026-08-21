@@ -1,0 +1,86 @@
+.nuestra-mision {
+  width: 100%;
+  background-color: #ffffff; /* Fondo claro continuo */
+  padding: 4rem 2rem 5rem 2rem;
+  box-sizing: border-box;
+}
+
+.nuestra-mision__contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Texto alineado a la izquierda */
+.nuestra-mision__contenido {
+  display: flex;
+  flex-direction: column;
+}
+
+.nuestra-mision__titulo {
+  color: #a81c1c;
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.nuestra-mision__descripcion {
+  color: #333333;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Caja de la imagen a la derecha */
+.nuestra-mision__caja-imagen {
+  width: 100%;
+  aspect-ratio: 1.1 / 1;
+  background-color: #333333;
+  border-radius: 2px;
+}
+
+@media (max-width: 850px) {
+  .nuestra-mision__contenedor {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .nuestra-mision__titulo {
+    font-size: 2.4rem;
+  }
+}
+/* Responsive Nuestra Misión */
+@media (max-width: 992px) {
+  .nuestra-mision__contenedor {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .nuestra-mision__titulo {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nuestra-mision {
+    padding: 3rem 1.2rem;
+  }
+
+  .nuestra-mision__contenido {
+    text-align: center;
+  }
+
+  .nuestra-mision__titulo {
+    font-size: 1.8rem;
+  }
+
+  .nuestra-mision__descripcion {
+    font-size: 0.95rem;
+  }
+}

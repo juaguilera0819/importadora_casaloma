@@ -1,0 +1,111 @@
+.quienes-somos {
+  width: 100%;
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 5rem 2rem 3rem 2rem;
+  box-sizing: border-box;
+}
+
+.quienes-somos__contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Caja de la imagen a la izquierda */
+.quienes-somos__caja-imagen {
+  width: 100%;
+  aspect-ratio: 1.1 / 1;
+  background-color: #333333;
+  border-radius: 2px;
+}
+
+/* Contenido de texto alineado a la derecha */
+.quienes-somos__contenido {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.quienes-somos__titulo {
+  color: #a81c1c;
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  margin: 0 0 2rem 0;
+  text-transform: uppercase;
+}
+
+.quienes-somos__descripcion {
+  color: #333333;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 1.5rem 0;
+  font-weight: 400;
+}
+
+.quienes-somos__descripcion:last-child {
+  margin-bottom: 0;
+}
+
+/* Línea sutil horizontal */
+.quienes-somos__divisor {
+  max-width: 1050px;
+  height: 1.5px;
+  background-color: #333333;
+  margin: 4rem auto 0 auto;
+}
+
+@media (max-width: 850px) {
+  .quienes-somos__contenedor {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .quienes-somos__contenido {
+    text-align: center;
+  }
+
+  .quienes-somos__titulo {
+    font-size: 2.4rem;
+  }
+}
+/* Responsive Quiénes Somos */
+@media (max-width: 992px) {
+  .quienes-somos__contenedor {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .quienes-somos__contenido {
+    text-align: left; /* Alinea al centro/izquierda en tablets */
+  }
+
+  .quienes-somos__titulo {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .quienes-somos {
+    padding: 3.5rem 1.2rem 2rem 1.2rem;
+  }
+
+  .quienes-somos__contenido {
+    text-align: center;
+  }
+
+  .quienes-somos__titulo {
+    font-size: 1.8rem;
+  }
+
+  .quienes-somos__descripcion {
+    font-size: 0.95rem;
+  }
+
+  .quienes-somos__divisor {
+    margin-top: 2.5rem;
+  }
+}

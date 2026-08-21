@@ -1,0 +1,298 @@
+/* src/header.css */
+
+/* Reset base e integración de fondo global */
+:root, body {
+  margin: 0;
+  padding: 0;
+  background-color: #a81c1c;  
+}
+
+/* Header con posicionamiento absoluto para superponerse al Hero */
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #0b111e;
+  padding: 0.8rem 2rem;
+  box-sizing: border-box;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  overflow: visible;
+  animation: fadeInHeader 1.2s ease-out forwards;
+}
+
+.site-header__inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Logo */
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  opacity: 0;
+  animation: slowSlideDown 1.4s ease-out 0.2s forwards;
+}
+
+.site-header__logo-badge {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid #a82424;
+  background: #ffffff;
+  color: #0b111e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.site-header__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-title {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+.brand-subtitle {
+  color: #a82424;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+
+/* Buscador */
+.site-header__search-container {
+  justify-self: center;
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  animation: slowSlideDown 1.4s ease-out 0.4s forwards;
+}
+
+.site-header__search-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  padding: 0.6rem 2.8rem 0.6rem 1.2rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.site-header__search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.site-header__search-input:focus {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.site-header__search-btn {
+  position: absolute;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+/* Navegación Desktop */
+.site-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: slowSlideDown 1.4s ease-out 0.6s forwards;
+}
+
+.site-header__nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.55rem 1.4rem;
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.site-header__nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Botón Hamburguesa */
+.site-header__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+
+.site-header__hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Transición animada de la hamburguesa a una "X" */
+.site-header__hamburger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.site-header__hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.site-header__hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Menú Desplegable */
+.site-header__mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #0b111e;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 1rem 0;
+  margin-top: 0.8rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.site-header__mobile-menu.is-open {
+  display: flex;
+}
+
+.site-header__mobile-menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 0.8rem 2rem;
+  letter-spacing: 0.05em;
+  transition: background-color 0.2s ease;
+}
+
+.site-header__mobile-menu a:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Animaciones */
+@keyframes fadeInHeader {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slowSlideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE TABLET & MOBILE --- */
+
+@media (max-width: 992px) {
+  .site-header__nav {
+    display: none !important;
+  }
+
+  .site-header__hamburger {
+    display: flex;
+  }
+
+  .site-header__inner {
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding: 0.8rem 1.2rem 1rem 1.2rem;
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+  }
+
+  /* Grid de 2 filas para Móvil */
+  .site-header__inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  /* Fila 1: Logo a la izquierda */
+  .site-header__logo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  /* Fila 1: Hamburguesa a la derecha a la misma altura del logo */
+  .site-header__hamburger {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+  }
+
+  /* Fila 2: Buscador alineado abajo a lo ancho del contenedor */
+  .site-header__search-container {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .site-header__search-input {
+    display: block;
+    width: 100%;
+    padding: 0.55rem 2.5rem 0.55rem 1rem;
+    box-sizing: border-box;
+    font-size: 0.85rem;
+  }
+
+  .site-header__search-btn {
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    padding: 0;
+  }
+
+  .site-header__mobile-menu {
+    margin-top: 0.6rem;
+  }
+}

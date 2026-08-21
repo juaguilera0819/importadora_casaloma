@@ -1,0 +1,83 @@
+.about {
+  width: 100%;
+  background-color: #0b111e; /* Fondo oscuro igual al header */
+  color: #ffffff;
+  padding: 5rem 2rem;
+  box-sizing: border-box;
+}
+
+.about__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about__title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.about__description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #d0d5dd;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Caja gris para placeholder o etiqueta <img> */
+.about__image-box {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #333333;
+  border-radius: 4px;
+}
+
+@media (max-width: 850px) {
+  .about__container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about__title {
+    font-size: 2.5rem;
+  }
+}
+/* Responsive Nosotros */
+@media (max-width: 992px) {
+  .about__container {
+    grid-template-columns: 1fr; /* Apila el texto y la imagen */
+    gap: 2.5rem;
+  }
+
+  .about__title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .about {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .about__title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .about__description {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
