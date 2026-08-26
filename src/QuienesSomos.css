@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap');
+
 .quienes-somos {
   width: 100%;
-  background-color: #ffffff; /* Fondo blanco */
+  background-color: #f4f4f4; /* FONDO #f4f4f4 */
   padding: 5rem 2rem 3rem 2rem;
   box-sizing: border-box;
 }
@@ -29,50 +31,41 @@
   text-align: right;
 }
 
+/* TÍTULO: Montserrat Black (900) - Color #a31f25 */
 .quienes-somos__titulo {
-  color: #a81c1c;
-  font-size: 3.2rem;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
+  color: #a31f25;
+  font-size: 3.2rem;
   letter-spacing: 0.02em;
   margin: 0 0 2rem 0;
   text-transform: uppercase;
 }
 
+/* DESCRIPCIÓN: Montserrat Light (300) - Color #0b101a */
 .quienes-somos__descripcion {
-  color: #333333;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #0b101a;
   font-size: 1.05rem;
   line-height: 1.7;
   margin: 0 0 1.5rem 0;
-  font-weight: 400;
 }
 
 .quienes-somos__descripcion:last-child {
   margin-bottom: 0;
 }
 
-/* Línea sutil horizontal */
+/* LÍNEA: #0b101a - Grosor: 2px - Redondeada */
 .quienes-somos__divisor {
   max-width: 1050px;
-  height: 1.5px;
-  background-color: #333333;
+  height: 2px;
+  background-color: #0b101a;
+  border-radius: 999px;
   margin: 4rem auto 0 auto;
 }
 
-@media (max-width: 850px) {
-  .quienes-somos__contenedor {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .quienes-somos__contenido {
-    text-align: center;
-  }
-
-  .quienes-somos__titulo {
-    font-size: 2.4rem;
-  }
-}
-/* Responsive Quiénes Somos */
+/* Responsive */
 @media (max-width: 992px) {
   .quienes-somos__contenedor {
     grid-template-columns: 1fr;
@@ -80,7 +73,7 @@
   }
 
   .quienes-somos__contenido {
-    text-align: left; /* Alinea al centro/izquierda en tablets */
+    text-align: center;
   }
 
   .quienes-somos__titulo {
@@ -91,10 +84,6 @@
 @media (max-width: 640px) {
   .quienes-somos {
     padding: 3.5rem 1.2rem 2rem 1.2rem;
-  }
-
-  .quienes-somos__contenido {
-    text-align: center;
   }
 
   .quienes-somos__titulo {

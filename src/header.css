@@ -1,13 +1,10 @@
-/* src/header.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap');
 
-/* Reset base e integración de fondo global */
 :root, body {
   margin: 0;
   padding: 0;
-  background-color: #a81c1c;  
 }
 
-/* Header con posicionamiento absoluto para superponerse al Hero */
 .site-header {
   position: absolute;
   top: 0;
@@ -15,7 +12,7 @@
   right: 0;
   width: 100%;
   z-index: 100;
-  background-color: #0b111e;
+  background-color: #0b101a;
   padding: 0.8rem 2rem;
   box-sizing: border-box;
   border-bottom-left-radius: 35px;
@@ -29,56 +26,32 @@
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: minmax(120px, auto) 1fr auto;
   align-items: center;
   gap: 2rem;
 }
 
-/* Logo */
 .site-header__logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   text-decoration: none;
   opacity: 0;
   animation: slowSlideDown 1.4s ease-out 0.2s forwards;
 }
 
-.site-header__logo-badge {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 2px solid #a82424;
-  background: #ffffff;
-  color: #0b111e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 0.95rem;
+.site-header__logo-img {
+  height: 85px;
+  width: auto;
+  object-fit: contain;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  transition: transform 0.2s ease;
 }
 
-.site-header__logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+.site-header__logo-img:hover {
+  transform: scale(1.03);
 }
 
-.brand-title {
-  color: #ffffff;
-  font-weight: 900;
-  font-size: 0.95rem;
-  letter-spacing: 0.05em;
-}
-
-.brand-subtitle {
-  color: #a82424;
-  font-weight: 700;
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-}
-
-/* Buscador */
 .site-header__search-container {
   justify-self: center;
   position: relative;
@@ -92,18 +65,23 @@
 
 .site-header__search-input {
   width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #f4f4f4;
+  font-size: 0.9rem;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 999px;
   padding: 0.6rem 2.8rem 0.6rem 1.2rem;
-  color: #ffffff;
-  font-size: 0.9rem;
   outline: none;
   transition: all 0.3s ease;
 }
 
 .site-header__search-input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #f4f4f4;
+  opacity: 0.7;
 }
 
 .site-header__search-input:focus {
@@ -113,10 +91,10 @@
 
 .site-header__search-btn {
   position: absolute;
-  right: 10px;
+  right: 12px;
   background: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
+  color: #f4f4f4;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -124,7 +102,6 @@
   padding: 4px;
 }
 
-/* Navegación Desktop */
 .site-header__nav {
   display: flex;
   align-items: center;
@@ -134,11 +111,12 @@
 }
 
 .site-header__nav a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 0.8rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: #f4f4f4;
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
+  text-decoration: none;
   background: rgba(255, 255, 255, 0.08);
   padding: 0.55rem 1.4rem;
   border-radius: 999px;
@@ -150,11 +128,10 @@
   transform: translateY(-2px);
 }
 
-/* Botón Hamburguesa */
 .site-header__hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-around; /* Corregido aquí */
   width: 28px;
   height: 24px;
   background: transparent;
@@ -167,12 +144,11 @@
 .site-header__hamburger span {
   width: 100%;
   height: 3px;
-  background-color: #ffffff;
+  background-color: #f4f4f4;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
-/* Transición animada de la hamburguesa a una "X" */
 .site-header__hamburger.is-active span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
@@ -183,11 +159,10 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Menú Desplegable */
 .site-header__mobile-menu {
   display: none;
   flex-direction: column;
-  background-color: #0b111e;
+  background-color: #0b101a;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   padding: 1rem 0;
@@ -200,10 +175,11 @@
 }
 
 .site-header__mobile-menu a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: #f4f4f4;
   font-size: 0.9rem;
+  text-decoration: none;
   padding: 0.8rem 2rem;
   letter-spacing: 0.05em;
   transition: background-color 0.2s ease;
@@ -213,7 +189,6 @@
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Animaciones */
 @keyframes fadeInHeader {
   from { opacity: 0; transform: translateY(-15px); }
   to { opacity: 1; transform: translateY(0); }
@@ -224,17 +199,13 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- RESPONSIVE TABLET & MOBILE --- */
-
 @media (max-width: 992px) {
   .site-header__nav {
     display: none !important;
   }
-
   .site-header__hamburger {
     display: flex;
   }
-
   .site-header__inner {
     grid-template-columns: auto 1fr auto;
   }
@@ -246,52 +217,34 @@
     border-bottom-left-radius: 28px;
     border-bottom-right-radius: 28px;
   }
-
-  /* Grid de 2 filas para Móvil */
   .site-header__inner {
-    display: grid;
     grid-template-columns: 1fr auto;
     gap: 0.8rem;
-    align-items: center;
   }
-
-  /* Fila 1: Logo a la izquierda */
   .site-header__logo {
     grid-column: 1;
     grid-row: 1;
   }
-
-  /* Fila 1: Hamburguesa a la derecha a la misma altura del logo */
+  .site-header__logo-img {
+    height: 55px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
   .site-header__hamburger {
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
   }
-
-  /* Fila 2: Buscador alineado abajo a lo ancho del contenedor */
   .site-header__search-container {
     grid-column: 1 / -1;
     grid-row: 2;
     width: 100%;
     max-width: 100%;
-    margin: 0;
   }
-
   .site-header__search-input {
-    display: block;
-    width: 100%;
     padding: 0.55rem 2.5rem 0.55rem 1rem;
-    box-sizing: border-box;
     font-size: 0.85rem;
   }
-
-  .site-header__search-btn {
-    position: absolute;
-    right: 10px;
-    background: transparent;
-    padding: 0;
-  }
-
   .site-header__mobile-menu {
     margin-top: 0.6rem;
   }

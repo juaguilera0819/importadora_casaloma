@@ -1,5 +1,5 @@
-import React from 'react'
-import './About.css'
+import React from 'react';
+import './About.css';
 
 function About() {
   return (
@@ -19,7 +19,7 @@ function About() {
         <div className="about__image-box"></div>
       </div>
     </section>
-  )
+  );
 }
 
-export default About
+export default About;

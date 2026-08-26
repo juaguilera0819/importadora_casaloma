@@ -1,5 +1,5 @@
-import React from 'react'
-import './NuestraMision.css'
+import React from 'react';
+import './NuestraMision.css';
 
 function NuestraMision() {
   return (
@@ -18,11 +18,11 @@ function NuestraMision() {
           </p>
         </div>
 
-        {/* Lado derecho: Contenedor para la imagen */}
+        {/* Lado derecho: Imagen */}
         <div className="nuestra-mision__caja-imagen"></div>
       </div>
     </section>
-  )
+  );
 }
 
-export default NuestraMision
+export default NuestraMision;

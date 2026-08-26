@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap');
+
 .nuestra-mision {
   width: 100%;
-  background-color: #ffffff; /* Fondo claro continuo */
+  background-color: #f4f4f4; /* FONDO #f4f4f4 */
   padding: 4rem 2rem 5rem 2rem;
   box-sizing: border-box;
 }
@@ -14,27 +16,30 @@
   align-items: center;
 }
 
-/* Texto alineado a la izquierda */
 .nuestra-mision__contenido {
   display: flex;
   flex-direction: column;
 }
 
+/* TÍTULO: Montserrat Black (900) - Color #a31f25 */
 .nuestra-mision__titulo {
-  color: #a81c1c;
-  font-size: 3.2rem;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
+  color: #a31f25;
+  font-size: 3.2rem;
   letter-spacing: 0.02em;
   margin: 0 0 1.5rem 0;
   text-transform: uppercase;
 }
 
+/* DESCRIPCIÓN: Montserrat Light (300) - Color #0b101a */
 .nuestra-mision__descripcion {
-  color: #333333;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #0b101a;
   font-size: 1.05rem;
   line-height: 1.7;
   margin: 0;
-  font-weight: 400;
 }
 
 /* Caja de la imagen a la derecha */
@@ -45,21 +50,15 @@
   border-radius: 2px;
 }
 
-@media (max-width: 850px) {
+/* Responsive */
+@media (max-width: 992px) {
   .nuestra-mision__contenedor {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  .nuestra-mision__titulo {
-    font-size: 2.4rem;
-  }
-}
-/* Responsive Nuestra Misión */
-@media (max-width: 992px) {
-  .nuestra-mision__contenedor {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
+  .nuestra-mision__contenido {
+    text-align: center;
   }
 
   .nuestra-mision__titulo {
@@ -70,10 +69,6 @@
 @media (max-width: 640px) {
   .nuestra-mision {
     padding: 3rem 1.2rem;
-  }
-
-  .nuestra-mision__contenido {
-    text-align: center;
   }
 
   .nuestra-mision__titulo {

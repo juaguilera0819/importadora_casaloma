@@ -1,5 +1,5 @@
-import React from 'react'
-import './Servicios.css'
+import React from 'react';
+import './Servicios.css';
 
 function Services() {
   return (
@@ -11,7 +11,7 @@ function Services() {
           que se conforman con nada menos que una atención y calidad excepcionales.
         </p>
 
-        {/* Grid de las 3 tarjetas oscuras */}
+        {/* Grid de las 3 tarjetas */}
         <div className="services__grid">
           <div className="services__card"></div>
           <div className="services__card"></div>
@@ -19,7 +19,7 @@ function Services() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Services
+export default Services;

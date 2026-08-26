@@ -1,11 +1,11 @@
-import React from 'react'
-import './QuienesSomos.css'
+import React from 'react';
+import './QuienesSomos.css';
 
 function QuienesSomos() {
   return (
     <section className="quienes-somos">
       <div className="quienes-somos__contenedor">
-        {/* Lado izquierdo: Contenedor para la imagen */}
+        {/* Lado izquierdo: Imagen */}
         <div className="quienes-somos__caja-imagen"></div>
 
         {/* Lado derecho: Texto */}
@@ -20,10 +20,10 @@ function QuienesSomos() {
         </div>
       </div>
 
-      {/* Línea divisora horizontal inferior */}
+      {/* Línea divisora horizontal */}
       <div className="quienes-somos__divisor"></div>
     </section>
-  )
+  );
 }
 
-export default QuienesSomos
+export default QuienesSomos;

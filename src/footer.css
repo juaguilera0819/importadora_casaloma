@@ -1,107 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,900;1,300&display=swap');
+
 .site-footer {
-  background-color: #a81c1c;
-  color: #ffffff;
+  background-color: #a31f25;
+  color: #f4f4f4;
   padding: 3.5rem 2rem;
   width: 100%;
   box-sizing: border-box;
 }
 
 .site-footer__inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 3.5rem;
 }
 
 /* Lado izquierdo */
 .site-footer__brand {
   flex: 1;
   max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .site-footer__logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-
-.site-footer__logo-badge {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  border: 2px solid #a82424;
-  background: #ffffff;
-  color: #0b111e;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 1rem;
+  text-decoration: none;
+  margin-bottom: 0.8rem;
+  width: 100%;
 }
 
-.site-footer__logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+/* Logo con tamaño prominente */
+.site-footer__logo-img {
+  height: 130px;
+  max-width: 260px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.site-footer__logo-img:hover {
+  transform: scale(1.03);
 }
 
 .site-footer__description {
-  font-size: 0.9rem;
-  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
   font-style: italic;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #f4f4f4;
   opacity: 0.95;
   margin: 0;
 }
 
-/* Divisor */
+/* Línea divisora vertical (2px redondeada) */
 .site-footer__divider {
-  width: 1px;
-  height: 180px;
-  background-color: rgba(255, 255, 255, 0.4);
+  width: 2px;
+  height: 170px;
+  background-color: #f4f4f4;
+  border-radius: 999px;
+  flex-shrink: 0;
 }
 
-/* Lado derecho */
+/* Lado derecho: Contacto */
 .site-footer__contact {
   flex: 1;
   max-width: 420px;
 }
 
+/* Título: Montserrat Black (900) */
 .site-footer__title {
-  font-size: 2.2rem;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 900;
+  font-size: 2.2rem;
+  color: #f4f4f4;
   letter-spacing: 0.05em;
   margin: 0 0 1.5rem 0;
   text-transform: uppercase;
 }
 
+/* Lista: Montserrat Medium (500) */
 .site-footer__list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: 0.8rem;
 }
 
 .site-footer__list li {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  font-size: 0.95rem;
+  gap: 0.8rem;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
+  font-size: 0.88rem;
+  color: #f4f4f4;
 }
 
 .site-footer__list svg {
   flex-shrink: 0;
+  color: #f4f4f4;
 }
+
 .site-footer__link {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  color: #ffffff;
+  gap: 0.8rem;
+  color: #f4f4f4;
   text-decoration: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
@@ -111,27 +125,7 @@
   transform: translateX(3px);
 }
 
-@media (max-width: 768px) {
-  .site-footer__inner {
-    flex-direction: column;
-    gap: 2rem;
-    text-align: center;
-  }
-
-  .site-footer__divider {
-    width: 80%;
-    height: 1px;
-  }
-
-  .site-footer__logo {
-    justify-content: center;
-  }
-
-  .site-footer__list li {
-    justify-content: center;
-  }
-}
-/* Responsive Footer */
+/* Adaptación responsive */
 @media (max-width: 992px) {
   .site-footer__inner {
     flex-direction: column;
@@ -141,14 +135,17 @@
 
   .site-footer__divider {
     width: 80%;
-    height: 1px; /* La línea pasa de ser vertical a horizontal */
+    height: 2px;
   }
 
-  .site-footer__logo {
-    justify-content: center;
+  .site-footer__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .site-footer__list li, .site-footer__link {
+  .site-footer__list li,
+  .site-footer__link {
     justify-content: center;
   }
 }
@@ -162,7 +159,7 @@
     font-size: 1.8rem;
   }
 
-  .site-footer__list li, .site-footer__link {
-    font-size: 0.88rem;
+  .site-footer__logo-img {
+    height: 100px;
   }
 }

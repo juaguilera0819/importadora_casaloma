@@ -1,21 +1,27 @@
-/* src/Hero.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,900;1,700&display=swap');
 
 .hero {
   position: relative;
   width: 100%;
-  /* El fondo del Hero completo inicia con el gradiente rojo para cubrir detrás del Header */
-  background: linear-gradient(135deg, #a81c1c 0%, #7d1212 100%);
+  background-color: #0b101a; 
+  background-image: 
+    linear-gradient(90deg, #a31f25 0%, rgba(11, 16, 26, 0) 100%),
+    url('../imagenes/Recurso.png');  
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 80px;
 }
 
-/* Caja principal con espacio superior para el Header */
 .hero__main {
-  color: #ffffff;
-  padding-top: 130px; /* Desplaza el contenido hacia abajo sin dejar huecos blancos */
+  color: #f4f4f4;
+  padding-top: 130px;
   padding-bottom: 8rem;
   padding-left: 2rem;
   padding-right: 2rem;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 
 .hero__content {
@@ -23,34 +29,66 @@
   margin-left: 5%;
 }
 
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .hero__title {
+  font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
   font-weight: 900;
+  color: #f4f4f4;
   line-height: 1.1;
   margin-bottom: 1.2rem;
   letter-spacing: 0.02em;
   text-transform: uppercase;
+  animation: slideInLeft 0.9s ease-out forwards;
 }
 
 .hero__description {
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.95rem;
+  font-weight: 300;
+  color: #f4f4f4;
   line-height: 1.6;
-  opacity: 0.9;
+  opacity: 0.95;
   margin-bottom: 2rem;
   max-width: 520px;
+  animation: slideInRight 0.9s ease-out forwards;
 }
 
 .hero__btn {
   display: inline-block;
-  background: #0b111e;
-  color: #ffffff;
-  font-weight: 800;
+  background: #0b101a;
+  color: #f4f4f4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-style: italic;
   font-size: 0.9rem;
   padding: 0.8rem 2rem;
   border-radius: 12px;
   text-decoration: none;
   letter-spacing: 0.05em;
   transition: transform 0.2s ease, background-color 0.2s ease;
+  animation: slideInRight 0.9s ease-out 0.15s backwards;
 }
 
 .hero__btn:hover {
@@ -58,15 +96,17 @@
   transform: translateY(-2px);
 }
 
-/* Tarjeta flotante de estadísticas */
 .hero__stats-card {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  
   width: 90%;
   max-width: 1100px;
-  margin: -50px auto 3rem auto;
   
   background-color: #e6e6e6; 
-  border: 1px solid #707070; 
+  border: 2px solid #808080; 
   border-radius: 28px; 
   
   padding: 2.2rem 1.5rem;
@@ -74,7 +114,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 20;
 }
 
 .hero__stat-item {
@@ -86,22 +126,23 @@
 }
 
 .hero__stat-number {
+  font-family: 'Montserrat', sans-serif;
   font-size: 3.8rem;
   font-weight: 900;
-  color: #a81c1c;
+  color: #a31f25;
   line-height: 1;
   margin-bottom: 0.3rem;
   letter-spacing: -0.02em;
 }
 
 .hero__stat-label {
-  color: #2b2b2b;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: #0b101a;
   font-size: 1rem;
-  font-weight: 500;
   letter-spacing: 0.01em;
 }
 
-/* --- RESPONSIVE LAPTOP (1024px) --- */
 @media (min-width: 993px) and (max-width: 1200px) {
   .hero__main {
     padding-top: 130px;
@@ -115,7 +156,6 @@
   }
 
   .hero__stats-card {
-    margin: -45px auto 2.8rem auto;
     padding: 1.8rem 1.2rem;
   }
 
@@ -127,8 +167,6 @@
     font-size: 0.95rem;
   }
 }
-
-/* --- RESPONSIVE TABLET & MOBILE --- */
 
 @media (max-width: 992px) {
   .hero__main {
@@ -143,7 +181,6 @@
   }
 
   .hero__stats-card {
-    margin: -40px auto 2.5rem auto;
     padding: 1.5rem 1rem;
   }
 
@@ -157,9 +194,13 @@
 }
 
 @media (max-width: 640px) {
+  .hero {
+    margin-bottom: 180px;
+  }
+
   .hero__main {
     text-align: center;
-    padding-top: 100px;
+    padding-top: 160px;
     padding-bottom: 6rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -170,13 +211,13 @@
   }
 
   .hero__title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    line-height: 1.25;
   }
 
   .hero__stats-card {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin: -35px auto 2rem auto;
     width: 92%;
   }
 }

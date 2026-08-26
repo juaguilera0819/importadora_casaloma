@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './Hero.css'
 
 // Hook personalizado para el contador animado
@@ -38,9 +39,9 @@ function Hero() {
             desempeño de tu vehículo. Contamos con un catálogo completo de
             repuestos importados para todas las marcas y modelos.
           </p>
-          <a href="#catalogo" className="hero__btn">
+          <Link to="/catalogo" className="hero__btn">
             VER CATALOGO
-          </a>
+          </Link>
         </div>
       </div>
 
