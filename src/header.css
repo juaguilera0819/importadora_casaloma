@@ -54,7 +54,7 @@
 
 .site-header__search-container {
   justify-self: center;
-  position: relative;
+  position: relative; /* Importante para el dropdown */
   width: 100%;
   max-width: 450px;
   display: flex;
@@ -102,6 +102,87 @@
   padding: 4px;
 }
 
+/* =========================================
+   ESTILOS DEL DESPLEGABLE DE AUTOCOMPLETADO
+   ========================================= */
+.search-results-dropdown {
+  position: absolute;
+  top: calc(100% + 10px); /* Espacio debajo del input */
+  left: 0;
+  right: 0;
+  background-color: #0b101a; /* Fondo oscuro acorde al header */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.5);
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Personalizar barra de scroll (opcional) */
+.search-results-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+.search-results-dropdown::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.search-results-dropdown__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.search-results-dropdown__item:last-child {
+  border-bottom: none;
+}
+
+.search-results-dropdown__item:hover {
+  background-color: rgba(255, 255, 255, 0.08); /* Hover sutil */
+}
+
+.search-results-dropdown__img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  background-color: #fff; /* Por si la imagen tiene transparencias */
+}
+
+.search-results-dropdown__info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.search-results-dropdown__title {
+  font-size: 0.85rem;
+  color: #f4f4f4;
+  font-weight: 300;
+  margin-bottom: 2px;
+}
+
+.search-results-dropdown__price {
+  font-size: 0.8rem;
+  color: #a3a3a3; /* Gris claro para diferenciar el precio */
+  font-weight: 900;
+}
+
+.search-results-dropdown__no-results {
+  padding: 15px;
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  text-align: center;
+  font-weight: 300;
+}
+/* ========================================= */
+
 .site-header__nav {
   display: flex;
   align-items: center;
@@ -131,7 +212,7 @@
 .site-header__hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-around; /* Corregido aquí */
+  justify-content: space-around;
   width: 28px;
   height: 24px;
   background: transparent;

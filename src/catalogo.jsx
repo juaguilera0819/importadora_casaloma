@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './Catalogo.css';
 
 const productosMock = [
@@ -29,9 +30,16 @@ const productosMock = [
 ];
 
 function Catalogo() {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const searchQuery = queryParams.get('search') || '';
+
+  const productosFiltrados = productosMock.filter((producto) =>
+    producto.nombre.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="catalogo-page">
-      {/* Hero Banner */}
       <section className="catalogo-hero">
         <div className="catalogo-hero__content">
           <h1 className="catalogo-hero__title">
@@ -51,24 +59,27 @@ function Catalogo() {
         </div>
       </section>
 
-      {/* Grilla de 24 Productos */}
       <section className="catalogo-container">
         <div className="products-grid">
-          {productosMock.map((producto) => (
-            <div key={producto.id} className="product-card">
-              <div className="product-card__image-container">
-                <img
-                  src={producto.imagen}
-                  alt={producto.nombre}
-                  className="product-card__image"
-                />
+          {productosFiltrados.length > 0 ? (
+            productosFiltrados.map((producto) => (
+              <div key={producto.id} className="product-card">
+                <div className="product-card__image-container">
+                  <img
+                    src={producto.imagen}
+                    alt={producto.nombre}
+                    className="product-card__image"
+                  />
+                </div>
+                <div className="product-card__info">
+                  <h3 className="product-card__name">{producto.nombre}</h3>
+                  <span className="product-card__price">{producto.precio}</span>
+                </div>
               </div>
-              <div className="product-card__info">
-                <h3 className="product-card__name">{producto.nombre}</h3>
-                <span className="product-card__price">{producto.precio}</span>
-              </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>No se encontraron productos que coincidan con "{searchQuery}".</p>
+          )}
         </div>
       </section>
     </div>
