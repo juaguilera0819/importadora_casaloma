@@ -3,14 +3,22 @@ import { Link, useNavigate } from 'react-router-dom';
 import logoImg from '../imagenes/LOGO.png';
 import './header.css';
 
-// Puedes importar tus productos aquí o mantener la lista mock
-const productosMock = [
-  { id: 1, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 2, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 3, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 4, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  // ... resto de productos
-];
+// Importación de las imágenes del aromatizante (rosa) y quitaolores (azul)
+import imgAromatizante from '../imagenes/aromatizante.jpg';
+import imgQuitaOlores from '../imagenes/quitaolores.png';
+
+// Productos mock con las imágenes correspondientes asignadas
+const productosMock = Array.from({ length: 24 }, (_, index) => {
+  const esAromatizante = index % 2 === 0;
+  return {
+    id: index + 1,
+    nombre: esAromatizante
+      ? 'Aromatizante para carro Carblock'
+      : 'Quitaolores para carros 500ml',
+    precio: '$50.000',
+    imagen: esAromatizante ? imgAromatizante : imgQuitaOlores,
+  };
+});
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

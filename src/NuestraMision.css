@@ -2,7 +2,7 @@
 
 .nuestra-mision {
   width: 100%;
-  background-color: #f4f4f4; /* FONDO #f4f4f4 */
+  background-color: #f4f4f4;
   padding: 4rem 2rem 5rem 2rem;
   box-sizing: border-box;
 }
@@ -21,7 +21,7 @@
   flex-direction: column;
 }
 
-/* TÍTULO: Montserrat Black (900) - Color #a31f25 */
+/* TÍTULO */
 .nuestra-mision__titulo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
@@ -32,7 +32,7 @@
   text-transform: uppercase;
 }
 
-/* DESCRIPCIÓN: Montserrat Light (300) - Color #0b101a */
+/* DESCRIPCIÓN */
 .nuestra-mision__descripcion {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
@@ -49,6 +49,25 @@
   background-color: #333333;
   border-radius: 2px;
 }
+
+/* --- CLASES Y ANIMACIONES AL HACER SCROLL --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Secuencia de retardos */
+.nuestra-mision__titulo.reveal { transition-delay: 0.1s; }
+.nuestra-mision__descripcion.reveal { transition-delay: 0.25s; }
+.nuestra-mision__caja-imagen.reveal { transition-delay: 0.4s; }
 
 /* Responsive */
 @media (max-width: 992px) {

@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import './Hero.css'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './Hero.css';
 
 // Hook personalizado para el contador animado
 function useCounter(endValue, duration = 2000) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    let startTimestamp = null
+    let startTimestamp = null;
     const step = (timestamp) => {
-      if (!startTimestamp) startTimestamp = timestamp
-      const progress = Math.min((timestamp - startTimestamp) / duration, 1)
-      setCount(Math.floor(progress * endValue))
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      setCount(Math.floor(progress * endValue));
       if (progress < 1) {
-        window.requestAnimationFrame(step)
+        window.requestAnimationFrame(step);
       }
-    }
-    window.requestAnimationFrame(step)
-  }, [endValue, duration])
+    };
+    window.requestAnimationFrame(step);
+  }, [endValue, duration]);
 
-  return count
+  return count;
 }
 
 function Hero() {
-  const repuestosCount = useCounter(2000, 2000)
-  const experienciaCount1 = useCounter(12, 1500)
-  const experienciaCount2 = useCounter(12, 1500)
+  const repuestosCount = useCounter(2000, 2000);
+  const experienciaCount1 = useCounter(12, 1500);
+  const experienciaCount2 = useCounter(12, 1500);
 
   return (
     <section className="hero">
@@ -65,7 +65,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

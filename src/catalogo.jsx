@@ -2,32 +2,22 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import './Catalogo.css';
 
-const productosMock = [
-  { id: 1, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 2, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 3, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 4, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 5, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 6, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 7, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 8, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 9, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 10, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 11, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 12, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 13, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 14, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 15, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 16, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 17, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 18, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 19, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 20, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 21, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 22, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 23, nombre: 'Aromatizante para carro Carblock', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-  { id: 24, nombre: 'Quitaolores para carros 500ml', precio: '$50.000', imagen: 'https://via.placeholder.com/200' },
-];
+// Importación de las imágenes desde la carpeta externa "../imagenes"
+import imgAromatizante from '../imagenes/aromatizante.jpg';
+import imgQuitaOlores from '../imagenes/quitaolores.png';
+
+// Generación de productos alternando las imágenes según el tipo
+const productosMock = Array.from({ length: 24 }, (_, index) => {
+  const esAromatizante = index % 2 === 0;
+  return {
+    id: index + 1,
+    nombre: esAromatizante
+      ? 'Aromatizante para carro Carblock'
+      : 'Quitaolores para carros 500ml',
+    precio: '$50.000',
+    imagen: esAromatizante ? imgAromatizante : imgQuitaOlores,
+  };
+});
 
 function Catalogo() {
   const location = useLocation();
