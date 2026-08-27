@@ -75,7 +75,7 @@
 .services__grid .services__card:nth-child(2) { transition-delay: 0.3s; }
 .services__grid .services__card:nth-child(3) { transition-delay: 0.45s; }
 
-/* Responsive */
+/* Responsive Tablet */
 @media (max-width: 992px) {
   .services {
     padding: 3rem 1.5rem 4rem 1.5rem;
@@ -86,7 +86,13 @@
   }
 }
 
+/* --- MÓVIL (AJUSTE DE ALTURA) --- */
 @media (max-width: 640px) {
+  .services {
+    /* Reducimos el padding superior a 1.5rem para elevar el título y el texto */
+    padding: 1.5rem 1.5rem 4rem 1.5rem;
+  }
+
   .services__grid {
     grid-template-columns: 1fr;
     max-width: 320px;
